@@ -56,12 +56,25 @@ const Projetos = () => {
       {/* Projects Grid */}
       <section style={{ padding: '64px 12px' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '32px'
-          }}>
-            {mockProjects.map((project) => (
+          {loading ? (
+            <div style={{ textAlign: 'center', padding: '48px' }}>
+              <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
+                Carregando projetos...
+              </p>
+            </div>
+          ) : projects.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '48px' }}>
+              <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
+                Nenhum projeto disponível no momento.
+              </p>
+            </div>
+          ) : (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '32px'
+            }}>
+              {projects.map((project) => (
               <div key={project.id} className="network-card" style={{ overflow: 'hidden', padding: 0 }}>
                 <div style={{
                   height: '240px',

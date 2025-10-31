@@ -1,8 +1,27 @@
-import React from 'react';
-import { mockProjects } from '../mock';
+import React, { useState, useEffect } from 'react';
 import { Users, Calendar } from 'lucide-react';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Projetos = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await axios.get(`${API}/projects`);
+        setProjects(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+        setLoading(false);
+      }
+    };
+    fetchProjects();
+  }, []);
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Hero Section */}

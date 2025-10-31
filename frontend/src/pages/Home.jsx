@@ -86,7 +86,7 @@ const Home = () => {
                 color: 'var(--brand-primary)',
                 marginBottom: '8px'
               }}>
-                {mockStats.volunteers}+
+                {stats.volunteers}+
               </div>
               <div style={{
                 fontSize: '1.125rem',
@@ -103,7 +103,7 @@ const Home = () => {
                 color: 'var(--brand-primary)',
                 marginBottom: '8px'
               }}>
-                {mockStats.beneficiaries}+
+                {stats.beneficiaries}+
               </div>
               <div style={{
                 fontSize: '1.125rem',
@@ -120,7 +120,7 @@ const Home = () => {
                 color: 'var(--brand-primary)',
                 marginBottom: '8px'
               }}>
-                {mockStats.projects}
+                {stats.projects}
               </div>
               <div style={{
                 fontSize: '1.125rem',
@@ -137,7 +137,7 @@ const Home = () => {
                 color: 'var(--brand-primary)',
                 marginBottom: '8px'
               }}>
-                {mockStats.years}
+                {stats.years}
               </div>
               <div style={{
                 fontSize: '1.125rem',

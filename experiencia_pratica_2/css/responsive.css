@@ -1,0 +1,330 @@
+/* ========================================
+   SISTEMA RESPONSIVO - 5 BREAKPOINTS
+   ======================================== */
+
+/* Mobile First Approach */
+
+/* ========================================
+   BREAKPOINT 1: Extra Small (0-479px)
+   Mobile Portrait
+   ======================================== */
+/* Estilos base já aplicados */
+
+/* ========================================
+   BREAKPOINT 2: Small (480px-639px)
+   Mobile Landscape
+   ======================================== */
+@media (min-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    h1 {
+        font-size: 2.25rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    #estatisticas > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   BREAKPOINT 3: Medium (640px-767px)
+   Tablet Portrait
+   ======================================== */
+@media (max-width: 767px) {
+    /* Mobile Navigation */
+    header {
+        top: 0;
+    }
+    
+    header nav {
+        border-radius: 0;
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    header nav ul {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .mobile-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--color-primary-dark);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-xl);
+        z-index: 999;
+    }
+    
+    .mobile-menu.show {
+        display: block;
+    }
+    
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .mobile-menu ul li {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .mobile-menu ul li a {
+        display: block;
+        color: var(--color-neutral-100);
+        padding: var(--spacing-sm);
+        border-radius: var(--radius-md);
+        transition: background var(--transition-base);
+    }
+    
+    .mobile-menu ul li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Hero ajustes */
+    #hero,
+    #hero-projetos,
+    #hero-cadastro {
+        min-height: 500px;
+        padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-xl);
+        border-radius: 0;
+    }
+    
+    /* Cards em coluna única */
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Botões empilhados */
+    #hero div a,
+    #participar div a {
+        display: block;
+        margin-bottom: var(--spacing-sm);
+        margin-right: 0;
+    }
+    
+    /* Formulário */
+    fieldset {
+        padding: var(--spacing-md);
+    }
+    
+    #formulario-cadastro form {
+        padding: var(--spacing-md);
+    }
+}
+
+/* ========================================
+   BREAKPOINT 4: Large (768px-1023px)
+   Tablet Landscape
+   ======================================== */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    /* Grid 2 colunas */
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #estatisticas > div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Hero */
+    #hero,
+    #hero-projetos,
+    #hero-cadastro {
+        min-height: 600px;
+    }
+    
+    /* Formulário em 2 colunas */
+    .form-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* ========================================
+   BREAKPOINT 5: Extra Large (1024px+)
+   Desktop
+   ======================================== */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-xl);
+    }
+    
+    /* Grid 3 colunas */
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Grid 4 colunas */
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Hero maior */
+    #hero {
+        min-height: 700px;
+    }
+    
+    /* Hover effects mais pronunciados em desktop */
+    .card:hover {
+        transform: translateY(-6px);
+    }
+    
+    #projetos article:hover {
+        transform: translateY(-6px);
+    }
+    
+    /* Formulário 3 colunas para alguns campos */
+    .form-row-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+/* ========================================
+   BREAKPOINT 6: Extra Extra Large (1280px+)
+   Large Desktop
+   ======================================== */
+@media (min-width: 1280px) {
+    /* Container mais espaçoso */
+    .container {
+        max-width: 1400px;
+    }
+    
+    /* Tipografia maior */
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    /* Seções com mais espaçamento */
+    section {
+        padding: var(--spacing-3xl) var(--spacing-xl);
+    }
+}
+
+/* ========================================
+   UTILITIES RESPONSIVAS
+   ======================================== */
+
+/* Display utilities */
+.hide-mobile {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .hide-mobile {
+        display: block;
+    }
+    
+    .hide-desktop {
+        display: none;
+    }
+}
+
+/* Espaçamento responsivo */
+.section-spacing {
+    padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .section-spacing {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .section-spacing {
+        padding: var(--spacing-3xl) var(--spacing-xl);
+    }
+}
+
+/* Text alignment responsivo */
+.text-center-mobile {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .text-center-mobile {
+        text-align: left;
+    }
+}
+
+/* ========================================
+   IMAGENS RESPONSIVAS
+   ======================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Picture element para imagens responsivas */
+picture img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ========================================
+   TABELAS RESPONSIVAS
+   ======================================== */
+
+@media (max-width: 767px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    header,
+    footer,
+    .menu-toggle,
+    .mobile-menu,
+    .btn {
+        display: none;
+    }
+    
+    main {
+        padding-top: 0;
+    }
+    
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}

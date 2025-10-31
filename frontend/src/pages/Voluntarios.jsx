@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { UserPlus, Mail, Phone, MessageSquare } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
+import { UserPlus } from 'lucide-react';
+import { toast } from 'sonner';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Voluntarios = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,11 +27,9 @@ const Voluntarios = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock submission - will be replaced with real API call
-    setTimeout(() => {
-      console.log('Volunteer registration:', formData);
-      toast({
-        title: "Cadastro realizado com sucesso!",
+    try {
+      await axios.post(`${API}/volunteers`, formData);
+      toast.success("Cadastro realizado com sucesso!", {
         description: "Entraremos em contato em breve. Obrigado por querer fazer parte!",
       });
       setFormData({
@@ -38,8 +39,14 @@ const Voluntarios = () => {
         area: 'Esporte',
         message: ''
       });
+    } catch (error) {
+      console.error('Error submitting volunteer form:', error);
+      toast.error("Erro ao enviar cadastro", {
+        description: "Por favor, tente novamente mais tarde.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

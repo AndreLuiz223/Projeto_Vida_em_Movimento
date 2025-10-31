@@ -1,9 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Eye, Award, Heart, Users, BookOpen, Dumbbell } from 'lucide-react';
-import { mockStats } from '../mock';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Home = () => {
+  const [stats, setStats] = useState({
+    volunteers: 45,
+    beneficiaries: 360,
+    projects: 4,
+    years: 8
+  });
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await axios.get(`${API}/stats`);
+        setStats(response.data);
+      } catch (error) {
+        console.error('Error fetching stats:', error);
+        // Keep default values on error
+      }
+    };
+    fetchStats();
+  }, []);
   return (
     <div style={{ paddingTop: '120px' }}>
       {/* Hero Section */}

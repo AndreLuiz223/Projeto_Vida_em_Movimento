@@ -137,7 +137,6 @@ const Projetos = () => {
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </section>
 

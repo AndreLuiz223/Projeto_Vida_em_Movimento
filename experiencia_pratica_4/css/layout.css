@@ -1,0 +1,279 @@
+/* ========================================
+   SEÇÕES E LAYOUTS
+   ======================================== */
+
+main {
+    padding-top: 120px;
+}
+
+section {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+section:nth-child(even) {
+    background: var(--color-neutral-200);
+}
+
+/* Sobre a ONG */
+#sobre {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+#sobre article {
+    margin-bottom: var(--spacing-xl);
+}
+
+#sobre article img {
+    border-radius: var(--radius-2xl);
+    margin: var(--spacing-md) 0;
+    box-shadow: var(--shadow-md);
+}
+
+#sobre ul {
+    list-style-position: inside;
+    color: var(--color-neutral-700);
+    padding-left: var(--spacing-md);
+}
+
+#sobre ul li {
+    padding: var(--spacing-xs) 0;
+}
+
+/* Estatísticas */
+#estatisticas {
+    background: var(--color-secondary-light);
+    text-align: center;
+}
+
+#estatisticas > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: var(--container-max-width);
+    margin: var(--spacing-lg) auto 0;
+}
+
+#estatisticas article h3 {
+    font-size: var(--font-size-5xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-bold);
+    text-shadow: 2px 2px 4px rgba(0, 69, 52, 0.1);
+}
+
+#estatisticas article p {
+    font-size: var(--font-size-lg);
+    color: var(--color-neutral-700);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Contato */
+#contato {
+    background: var(--color-neutral-100);
+}
+
+address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+address p {
+    margin-bottom: var(--spacing-md);
+}
+
+address strong {
+    color: var(--color-primary-dark);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Projetos */
+#projetos {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+#projetos article {
+    background: var(--color-neutral-200);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-slow);
+}
+
+#projetos article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+#projetos article img {
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+#projetos article h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+#projetos article p {
+    margin-bottom: var(--spacing-sm);
+}
+
+#projetos article p strong {
+    color: var(--color-primary-dark);
+}
+
+/* Voluntariado */
+#voluntariado {
+    background: var(--color-secondary-light);
+}
+
+#voluntariado img {
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+#voluntariado ul {
+    list-style: none;
+    padding: 0;
+}
+
+#voluntariado ul li {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background: var(--color-neutral-100);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-primary);
+}
+
+#voluntariado ul li strong {
+    color: var(--color-primary-dark);
+}
+
+/* Doações */
+#doacoes {
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+#doacoes article {
+    background: var(--color-neutral-200);
+    border-radius: var(--radius-2xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+#doacoes article h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-primary-dark);
+}
+
+#doacoes article h4 {
+    color: var(--color-primary-hover);
+    margin-top: var(--spacing-md);
+}
+
+#doacoes article ul {
+    list-style-position: inside;
+    color: var(--color-neutral-700);
+}
+
+/* CTA Sections */
+#participar {
+    background: var(--color-primary-dark);
+    color: var(--color-neutral-100);
+    text-align: center;
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+#participar h2 {
+    color: var(--color-neutral-100);
+}
+
+#participar p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-lg);
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+#participar div a {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-xl);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-base);
+    margin: var(--spacing-xs);
+}
+
+#participar div a:first-child {
+    background: var(--color-primary);
+    color: var(--color-primary-dark);
+}
+
+#participar div a:first-child:hover {
+    background: var(--color-primary-hover);
+    color: var(--color-neutral-100);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+#participar div a:last-child {
+    background: transparent;
+    color: var(--color-neutral-100);
+    border: 2px solid var(--color-neutral-100);
+}
+
+#participar div a:last-child:hover {
+    background: var(--color-neutral-100);
+    color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Formulário de Cadastro */
+#formulario-cadastro {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-sm);
+}
+
+#formulario-cadastro form {
+    background: var(--color-neutral-100);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Info Adicional */
+#info-adicional {
+    background: var(--color-secondary-light);
+    padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+#info-adicional ol {
+    list-style-position: inside;
+    color: var(--color-neutral-700);
+    padding-left: var(--spacing-md);
+    line-height: 2;
+}
+
+#info-adicional dl {
+    margin-top: var(--spacing-xl);
+}
+
+#info-adicional dt {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary-dark);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+#info-adicional dd {
+    color: var(--color-neutral-700);
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}

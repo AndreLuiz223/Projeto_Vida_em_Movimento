@@ -1,0 +1,155 @@
+/* ========================================
+   MODO ESCURO (DARK MODE)
+   ======================================== */
+
+/* Variáveis para Dark Mode */
+[data-theme="dark"] {
+    /* Backgrounds Dark */
+    --bg-page: #0a0f0d;
+    --bg-card: #1a1f1d;
+    --bg-subtle: #242924;
+    --bg-section: #2a3f2a;
+    
+    /* Text Dark */
+    --text-primary: #D3FF62;
+    --text-secondary: #a8d96e;
+    --text-light: #b8b8b8;
+    
+    /* Borders Dark */
+    --border-light: #2a3f2a;
+    --border-medium: #3a4a3a;
+    --border-strong: #4a5a4a;
+    
+    /* Cores neutras invertidas */
+    --color-neutral-100: #0a0f0d;
+    --color-neutral-200: #1a1f1d;
+    --color-neutral-900: #ffffff;
+    
+    /* Ajustes de sombra para dark mode */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Transição suave ao mudar tema */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Botão de Toggle Dark Mode */
+.theme-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: var(--shadow-xl);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 8px 32px rgba(211, 255, 98, 0.4);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Ícones do toggle */
+.theme-toggle .sun-icon,
+.theme-toggle .moon-icon {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.theme-toggle .moon-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Ajustes específicos para dark mode */
+[data-theme="dark"] body {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D3FF62' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .network-card,
+[data-theme="dark"] article.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background: var(--bg-card);
+    color: var(--color-neutral-900);
+    border-color: var(--border-medium);
+}
+
+[data-theme="dark"] fieldset {
+    border-color: var(--border-medium);
+}
+
+[data-theme="dark"] #hero,
+[data-theme="dark"] #hero-projetos,
+[data-theme="dark"] #hero-cadastro {
+    background: linear-gradient(135deg, #0a1f0d 0%, #1a3f2d 100%);
+}
+
+[data-theme="dark"] #participar {
+    background: var(--bg-card);
+    border-top: 3px solid var(--color-primary);
+}
+
+/* Indicador visual de preferência do sistema */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        /* Aplicar variáveis dark automaticamente se usuário preferir */
+    }
+}
+
+/* Acessibilidade - Contraste Alto */
+[data-theme="dark"][data-contrast="high"] {
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --bg-page: #000000;
+    --bg-card: #1a1a1a;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .theme-toggle {
+        bottom: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}

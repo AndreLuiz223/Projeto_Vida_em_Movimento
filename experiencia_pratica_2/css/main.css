@@ -21,6 +21,9 @@
 /* 6. Responsividade */
 @import url('responsive.css');
 
+/* 7. Dark Mode */
+@import url('dark-mode.css');
+
 /* ========================================
    ANIMAÇÕES GLOBAIS
    ======================================== */

@@ -10,24 +10,29 @@ import Voluntarios from "./pages/Voluntarios";
 import Doacoes from "./pages/Doacoes";
 import Contato from "./pages/Contato";
 import { Toaster } from "./components/ui/sonner";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/projetos" element={<Projetos />} />
-          <Route path="/voluntarios" element={<Voluntarios />} />
-          <Route path="/doacoes" element={<Doacoes />} />
-          <Route path="/contato" element={<Contato />} />
-        </Routes>
-        <Footer />
-        <Toaster />
-      </BrowserRouter>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/projetos" element={<Projetos />} />
+            <Route path="/voluntarios" element={<Voluntarios />} />
+            <Route path="/doacoes" element={<Doacoes />} />
+            <Route path="/contato" element={<Contato />} />
+          </Routes>
+          <Footer />
+          <Toaster />
+          <ThemeToggle />
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 

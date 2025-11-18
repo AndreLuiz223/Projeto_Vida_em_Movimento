@@ -25,19 +25,29 @@ export const ThemeProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    // Aplicar tema ao documento
+    // Aplicar tema ao html element
+    const root = document.documentElement;
+    
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      root.classList.add('dark');
+      root.setAttribute('data-theme', 'dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
+      root.setAttribute('data-theme', 'light');
     }
     
     // Salvar preferência
     localStorage.setItem('theme', theme);
+    
+    console.log('🌓 Tema alterado para:', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    setTheme(prev => {
+      const newTheme = prev === 'light' ? 'dark' : 'light';
+      console.log('🔄 Alternando tema:', prev, '->', newTheme);
+      return newTheme;
+    });
   };
 
   const value = {

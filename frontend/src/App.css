@@ -29,6 +29,132 @@
   --spacing-giant: 64px;
 }
 
+/* ========================================
+   DARK MODE
+   ======================================== */
+
+.dark {
+  /* Backgrounds - Dark Mode */
+  --bg-page: #0a0f0d;
+  --bg-card: #1a1f1d;
+  --bg-subtle: #242924;
+  --bg-section: #2a3f2a;
+  
+  /* Text - Dark Mode */
+  --text-primary: #D3FF62;
+  --text-secondary: #a8d96e;
+  --text-light: #b8b8b8;
+  
+  /* Borders - Dark Mode */
+  --border-light: #2a3f2a;
+  --border-medium: #3a4a3a;
+  --border-strong: #4a5a4a;
+}
+
+.dark body {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D3FF62' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Smooth transition for theme change */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 69, 52, 0.3);
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 8px 24px rgba(211, 255, 98, 0.4);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-btn .icon {
+  position: absolute;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-dark);
+}
+
+.theme-toggle-btn .icon.hidden {
+  opacity: 0;
+  transform: rotate(180deg) scale(0);
+}
+
+.theme-toggle-btn .icon:not(.hidden) {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Dark mode adjustments */
+.dark .network-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+.dark input::placeholder {
+  color: var(--text-light);
+}
+
+.dark .btn-primary {
+  background: var(--brand-primary);
+  color: var(--brand-dark);
+}
+
+.dark .btn-primary:hover {
+  background: var(--brand-hover);
+  color: white;
+}
+
+.dark .btn-secondary {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.dark .btn-secondary:hover {
+  background: var(--brand-primary);
+  color: var(--brand-dark);
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .theme-toggle-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

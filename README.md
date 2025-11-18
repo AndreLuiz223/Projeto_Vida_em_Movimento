@@ -222,7 +222,7 @@ Cada pasta possui seu README completo:
 ## ⚡ Acesso Rápido
 
 **Projeto React em Produção (RECOMENDADO):**
-- 🌐 https://ong-inclusao-social.preview.emergentagent.com/
+- 🌐https://ong-inclusao-social.preview.emergentagent.com/
 
 **Site Estático (Experiências Práticas):**
 - Navegue até `experiencia_pratica_4/`

@@ -1,11 +1,11 @@
 :root {
-  /* Backgrounds */
+  /* Backgrounds - Light Mode */
   --bg-page: #FAFFEE;
   --bg-card: #FAFAFF;
   --bg-subtle: #EDEDFE;
   --bg-section: #CACAFC;
   
-  /* Text */
+  /* Text - Light Mode */
   --text-primary: #004534;
   --text-secondary: #0C6951;
   --text-light: #807979;
